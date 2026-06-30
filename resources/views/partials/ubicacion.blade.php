@@ -1,53 +1,42 @@
-{{-- ============================== UBICACIÓN — Three.js ocean band ============================== --}}
-<section
-    id="ubicacion"
-    class="relative overflow-hidden bg-gradient-to-b from-ocean-950 via-ocean-900 to-ocean-950 py-28 lg:py-40"
->
-    {{-- WebGL Pacific (mounted by ocean-bg.js; the gradient above is the fallback) --}}
-    <div data-ocean-bg class="absolute inset-0"></div>
-
-    <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
+{{-- ============================== UBICACIÓN ============================== --}}
+<section id="ubicacion" class="bg-ocean-950 py-24 text-sand-50 lg:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10">
         <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            {{-- Text column --}}
+            {{-- Text --}}
             <div class="reveal-group">
-                <p class="eyebrow text-terra-300"><x-t><x-slot:es>Ubicación</x-slot:es><x-slot:en>Location</x-slot:en></x-t></p>
-                <h2 class="display mt-6 text-4xl font-light text-sand-50 sm:text-5xl lg:text-6xl">
-                    <x-t>
-                        <x-slot:es>Real del Mar en la costa de<br><em>Baja California</em></x-slot:es>
-                        <x-slot:en>Real del Mar on the coast of<br><em>Baja California</em></x-slot:en>
-                    </x-t>
-                </h2>
-                <p class="mt-8 text-lg leading-relaxed text-sand-100/80">
-                    <x-t>
-                        <x-slot:es>Vive donde el mar y la tranquilidad definen el día a día. Real del Mar ofrece un entorno planeado, con conexión ágil a Tijuana, Rosarito y la frontera de San Diego — rodeado de naturaleza y con servicios cercanos. Calidad de vida, crecimiento sostenido y una inversión con alta plusvalía.</x-slot:es>
-                        <x-slot:en>Live where the sea and tranquility define everyday life. Real del Mar offers a planned setting with easy access to Tijuana, Rosarito, and the San Diego border — surrounded by nature and close to services. Quality of life, steady growth, and an investment with strong appreciation.</x-slot:en>
-                    </x-t>
+                <p class="eyebrow text-gold-300">Ubicación</p>
+                <h2 class="display mt-5 text-4xl font-light sm:text-5xl">Conexión con lo <span class="accent-italic">esencial</span></h2>
+                <p class="mt-4 text-lg text-gold-300">A solo 15 minutos de Tijuana y 10 minutos de Rosarito.</p>
+                <p class="mt-6 text-lg leading-relaxed text-sand-100/80">
+                    Riviera Residencial se encuentra dentro de Real del Mar, sobre la Escénica Tijuana–Rosarito, en una ubicación estratégica para quienes buscan vivir cerca de la costa, con conexión rápida hacia Tijuana, Playas y Rosarito.
                 </p>
 
-                {{-- Drive times --}}
-                <div class="reveal-group mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-sand-50/15 bg-sand-50/10 backdrop-blur-sm sm:grid-cols-3">
+                <ul class="mt-9 grid grid-cols-1 gap-3 sm:grid-cols-2">
                     @foreach ([
-                        ['t' => '8 min', 'es' => 'Frontera', 'en' => 'Border'],
-                        ['t' => '10 min', 'es' => 'Zona Río Tijuana', 'en' => 'Tijuana River Zone'],
-                        ['t' => '13 min', 'es' => 'Aeropuerto', 'en' => 'Airport'],
-                    ] as $destino)
-                        <div class="flex items-center justify-center gap-3 bg-ocean-950/40 px-5 py-5 text-center sm:flex-col sm:gap-0 sm:px-6 sm:py-7">
-                            <p class="display whitespace-nowrap text-3xl font-light leading-none text-sand-50 sm:text-4xl">{{ $destino['t'] }}</p>
-                            <p class="eyebrow text-[0.55rem] text-ocean-300 sm:mt-2"><span class="lang-es">{{ $destino['es'] }}</span><span class="lang-en">{{ $destino['en'] }}</span></p>
-                        </div>
+                        'Dentro de Real del Mar',
+                        'Km. 19.5, Escénica Tijuana–Rosarito',
+                        'A 15 min de Tijuana',
+                        'A 10 min de Rosarito',
+                        'Conexión con Playas de Tijuana',
+                        'Adiós al tráfico',
+                    ] as $punto)
+                        <li class="flex items-start gap-3 text-sm text-sand-100/85">
+                            <svg class="mt-0.5 h-4 w-4 shrink-0 text-gold-300" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+                            <span>{{ $punto }}</span>
+                        </li>
                     @endforeach
-                </div>
-                <p class="reveal mt-4 text-xs text-sand-200/40"><x-t><x-slot:es>Tiempos con las nuevas vialidades, validados por el Arq. Carlos Rivera.</x-slot:es><x-slot:en>Times with the new roadways, validated by Arch. Carlos Rivera.</x-slot:en></x-t></p>
+                </ul>
+
+                <a href="https://maps.google.com/?q=Real+del+Mar+Km+19.5+Escenica+Tijuana+Rosarito" target="_blank" rel="noopener"
+                    class="eyebrow mt-9 inline-flex items-center justify-center rounded-full bg-gold-500 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-gold-400">Ver ubicación en mapa</a>
             </div>
 
-            {{-- Map column --}}
-            <div class="reveal overflow-hidden rounded-2xl border border-sand-50/15 bg-sand-50 p-4 sm:p-6">
-                <img
-                    src="{{ asset('images/mapa-cande.png') }}"
-                    alt="Mapa de ubicación de Candé en Real del Mar, zona costa de Baja California"
-                    loading="lazy"
-                    class="mx-auto h-auto w-full"
-                >
+            {{-- Map --}}
+            <div class="reveal overflow-hidden rounded-3xl border border-sand-50/15 shadow-xl shadow-ink/20">
+                <iframe
+                    title="Mapa de Riviera Residencial en Real del Mar"
+                    src="https://maps.google.com/maps?q=Real%20del%20Mar%20Km%2019.5%20Escenica%20Tijuana%20Rosarito&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    class="aspect-[4/3] w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>

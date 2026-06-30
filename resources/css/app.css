@@ -106,6 +106,20 @@
     --color-stone-warm: #a39a8b;
     --color-oak: #9c7a52;
 
+    /* Olive / verde olivo — natural, golf & landscape accents */
+    --color-olive-300: #b6b78c;
+    --color-olive-500: #7d7f54;
+    --color-olive-700: #565838;
+
+    /* Soft gold — refined CTA / detail accents */
+    --color-gold-300: #e2caa0;
+    --color-gold-400: #cdab74;
+    --color-gold-500: #b6914f;
+
+    /* Madera / wood & warm beige tones */
+    --color-wood: #8a6a45;
+    --color-beige: #efe6d6;
+
     /* Ink — warm charcoal text, never pure black */
     --color-ink: #232019;
     --color-ink-soft: #5c564a;

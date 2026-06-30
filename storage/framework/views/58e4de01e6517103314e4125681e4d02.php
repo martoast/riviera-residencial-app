@@ -1,5 +1,5 @@
-{{-- ============================== INTERIORES / CASAS MUESTRA ============================== --}}
-@php
+
+<?php
     $interiores = [
         ['img' => 'riviera-int-sala2.jpg',    't' => 'Sala', 'span' => 'lg:col-span-2 lg:row-span-2'],
         ['img' => 'riviera-int-comedor.jpg',  't' => 'Comedor y cocina', 'span' => ''],
@@ -9,7 +9,7 @@
         ['img' => 'riviera-terraza.jpg',      't' => 'Roof garden', 'span' => 'lg:col-span-2'],
         ['img' => 'riviera-int-sala.jpg',     't' => 'Estancia con vista', 'span' => ''],
     ];
-@endphp
+?>
 
 <section id="interiores" class="bg-sand-100 py-24 lg:py-32"
     x-data="{ open: false, src: '', title: '' }" @keydown.escape.window="open = false">
@@ -22,15 +22,15 @@
         </div>
 
         <div class="reveal mt-12 grid auto-rows-[220px] grid-cols-2 gap-4 lg:grid-cols-4">
-            @foreach ($interiores as $i)
-                <button type="button" @click="open = true; src = '{{ asset('images/' . $i['img']) }}'; title = '{{ $i['t'] }}'"
-                    class="group relative overflow-hidden rounded-2xl bg-ocean-950 {{ $i['span'] }}">
-                    <img src="{{ asset('images/' . $i['img']) }}" alt="{{ $i['t'] }} — casa muestra Riviera Residencial" loading="lazy"
+            <?php $__currentLoopData = $interiores; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <button type="button" @click="open = true; src = '<?php echo e(asset('images/' . $i['img'])); ?>'; title = '<?php echo e($i['t']); ?>'"
+                    class="group relative overflow-hidden rounded-2xl bg-ocean-950 <?php echo e($i['span']); ?>">
+                    <img src="<?php echo e(asset('images/' . $i['img'])); ?>" alt="<?php echo e($i['t']); ?> — casa muestra Riviera Residencial" loading="lazy"
                         class="h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-ocean-950/60 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
-                    <span class="eyebrow absolute bottom-4 left-4 text-[0.6rem] text-sand-50 opacity-0 transition-opacity group-hover:opacity-100">{{ $i['t'] }}</span>
+                    <span class="eyebrow absolute bottom-4 left-4 text-[0.6rem] text-sand-50 opacity-0 transition-opacity group-hover:opacity-100"><?php echo e($i['t']); ?></span>
                 </button>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
 
         <div class="reveal mt-10">
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    {{-- Lightbox --}}
+    
     <div x-show="open" x-cloak x-transition.opacity
         class="fixed inset-0 z-[90] flex items-center justify-center bg-ocean-950/90 p-4 lg:p-10" @click="open = false">
         <div class="relative max-h-full max-w-5xl" @click.stop>
@@ -50,3 +50,4 @@
         </div>
     </div>
 </section>
+<?php /**PATH /Users/alex/Documents/ricardo/riviera-residencial/app/resources/views/partials/interiores.blade.php ENDPATH**/ ?>
