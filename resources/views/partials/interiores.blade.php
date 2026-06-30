@@ -38,7 +38,7 @@
         </div>
 
         <div class="reveal mt-10">
-            <a href="#contacto" class="eyebrow inline-flex items-center justify-center rounded-full bg-gold-500 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-gold-400">Agendar visita a casa muestra</a>
+            <a href="#contacto" class="eyebrow inline-flex items-center justify-center rounded-full bg-gold-500 px-8 py-4 text-center text-[0.7rem] leading-snug text-sand-50 transition-colors hover:bg-gold-400">Agendar visita a casa muestra</a>
         </div>
     </div>
 

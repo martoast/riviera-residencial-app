@@ -115,7 +115,7 @@
                 :class="navSolid || navOpen ? 'text-ink' : 'text-sand-50'"
                 aria-label="Riviera Residencial — inicio"
             >
-                @include('partials.logo', ['class' => 'h-11 w-auto lg:h-12'])
+                @include('partials.logo', ['variant' => 'auto', 'class' => 'h-12 w-auto lg:h-14'])
             </a>
 
             {{-- Desktop links — centered in the navbar --}}
@@ -183,9 +183,12 @@
                         22565 Tijuana, B.C.
                     </p>
                     <p class="mt-5 text-xs leading-relaxed text-sand-200/55">
-                        Comercializado por BCapital Brokers.<br>
                         Un desarrollo más de HIR Baja · Grupo HIR.
                     </p>
+                    <div class="mt-6">
+                        <p class="eyebrow mb-3 text-[0.55rem] text-sand-200/45">Comercializado por</p>
+                        <img src="{{ asset('images/bcapital-logo.png') }}" alt="BCapital Brokers" class="h-12 w-auto">
+                    </div>
                 </div>
 
                 {{-- Quick links --}}
