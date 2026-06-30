@@ -9,13 +9,11 @@
             </p>
         </div>
 
-        {{-- Brand line (text placeholders until logos are supplied) --}}
-        <div class="reveal mt-12 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-12 sm:gap-y-4">
-            <span class="display text-xl text-ink/70 sm:text-2xl">HIR Baja</span>
-            <span class="hidden h-6 w-px bg-ink/15 sm:block"></span>
-            <span class="display text-xl text-ink/70 sm:text-2xl">Grupo HIR</span>
-            <span class="hidden h-6 w-px bg-ink/15 sm:block"></span>
-            <span class="display text-xl text-ink/70 sm:text-2xl">BCapital Brokers</span>
+        {{-- Backers --}}
+        <div class="reveal mt-12 flex flex-col items-center justify-center gap-8 sm:flex-row sm:gap-14">
+            <img src="{{ asset('images/hir-baja-dark.png') }}" alt="HIR Baja" class="h-20 w-auto sm:h-24">
+            <span class="hidden h-14 w-px bg-ink/15 sm:block"></span>
+            <img src="{{ asset('images/bcapital-dark.png') }}" alt="BCapital Brokers" class="h-12 w-auto sm:h-14">
         </div>
 
         @php
