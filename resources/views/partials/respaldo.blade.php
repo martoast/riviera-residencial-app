@@ -10,23 +10,37 @@
         </div>
 
         {{-- Brand line (text placeholders until logos are supplied) --}}
-        <div class="reveal mt-12 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
-            <span class="display text-2xl text-ink/70">HIR Baja</span>
-            <span class="h-6 w-px bg-ink/15"></span>
-            <span class="display text-2xl text-ink/70">Grupo HIR</span>
-            <span class="h-6 w-px bg-ink/15"></span>
-            <span class="display text-2xl text-ink/70">BCapital Brokers</span>
+        <div class="reveal mt-12 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-12 sm:gap-y-4">
+            <span class="display text-xl text-ink/70 sm:text-2xl">HIR Baja</span>
+            <span class="hidden h-6 w-px bg-ink/15 sm:block"></span>
+            <span class="display text-xl text-ink/70 sm:text-2xl">Grupo HIR</span>
+            <span class="hidden h-6 w-px bg-ink/15 sm:block"></span>
+            <span class="display text-xl text-ink/70 sm:text-2xl">BCapital Brokers</span>
         </div>
 
-        {{-- Timeline --}}
-        <div class="reveal mt-16 grid gap-px overflow-hidden rounded-3xl bg-ink/10 text-left sm:grid-cols-2 lg:grid-cols-5">
-            @foreach ([
+        @php
+            $eras = [
                 ['d' => "1960's", 't' => 'Inicio en comercialización de lotes'],
                 ['d' => "1990's", 't' => 'HIR Casa · Hipotecaria Nacional · HIR Seguros'],
                 ['d' => "2000's", 't' => 'HIR PYME · HIR Expo · Residencial WTC'],
                 ['d' => "2010's", 't' => 'Pepsi Center · BIM Banco Inmobiliario'],
                 ['d' => "2020's", 't' => 'HIR XLab · Preflex · HIR CASA-BMV'],
-            ] as $era)
+            ];
+        @endphp
+
+        {{-- Timeline — compact list on mobile --}}
+        <div class="reveal mt-10 space-y-4 text-left sm:hidden">
+            @foreach ($eras as $era)
+                <div class="border-l-2 border-gold-500/40 pl-4">
+                    <p class="display text-lg leading-none text-gold-500">{{ $era['d'] }}</p>
+                    <p class="mt-1.5 text-sm leading-snug text-ink-soft">{{ $era['t'] }}</p>
+                </div>
+            @endforeach
+        </div>
+
+        {{-- Timeline — card grid on tablet/desktop --}}
+        <div class="reveal mt-16 hidden gap-px overflow-hidden rounded-3xl bg-ink/10 text-left sm:grid sm:grid-cols-2 lg:grid-cols-5">
+            @foreach ($eras as $era)
                 <div class="bg-sand-50 p-6">
                     <p class="display text-2xl text-gold-500">{{ $era['d'] }}</p>
                     <p class="mt-2 text-sm leading-relaxed text-ink-soft">{{ $era['t'] }}</p>

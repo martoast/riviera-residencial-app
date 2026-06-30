@@ -67,5 +67,60 @@ Alpine.data('visitForm', () => ({
     },
 }));
 
+/**
+ * Slideshow gallery lightbox. Pass the image list: gallery([{src, t}, ...]).
+ * show(index) opens at that image; next()/prev() cycle through all of them.
+ */
+Alpine.data('gallery', (imgs = []) => ({
+    open: false,
+    i: 0,
+    imgs,
+    show(idx) {
+        this.i = idx;
+        this.open = true;
+    },
+    next() {
+        this.i = (this.i + 1) % this.imgs.length;
+    },
+    prev() {
+        this.i = (this.i - 1 + this.imgs.length) % this.imgs.length;
+    },
+}));
+
+/**
+ * Count-up number. Animates from 0 to `target` (easeOutCubic) the first time
+ * the element scrolls into view. Respects prefers-reduced-motion.
+ * Usage: <span x-data="countUp(6.7)" x-text="display">6.7</span>
+ */
+Alpine.data('countUp', (target, decimals = 1, duration = 1500) => ({
+    display: (0).toFixed(decimals),
+    init() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            this.display = target.toFixed(decimals);
+            return;
+        }
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                if (e.isIntersecting) {
+                    this.run();
+                    obs.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        obs.observe(this.$el);
+    },
+    run() {
+        const start = performance.now();
+        const ease = (t) => 1 - Math.pow(1 - t, 3);
+        const tick = (now) => {
+            const p = Math.min(1, (now - start) / duration);
+            this.display = (target * ease(p)).toFixed(decimals);
+            if (p < 1) requestAnimationFrame(tick);
+            else this.display = target.toFixed(decimals);
+        };
+        requestAnimationFrame(tick);
+    },
+}));
+
 window.Alpine = Alpine;
 Alpine.start();

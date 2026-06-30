@@ -10,7 +10,7 @@
                     <p class="mt-6 text-base leading-relaxed text-sand-100/80">
                         Riviera Residencial es una propuesta ideal para brokers que buscan comercializar residencias con ubicación estratégica, respaldo, amenidades, casa club y modelos familiares dentro de Real del Mar.
                     </p>
-                    <a href="#contacto" class="eyebrow mt-8 inline-flex items-center justify-center rounded-full bg-gold-500 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-gold-400">Quiero promover Riviera</a>
+                    <a href="#contacto" class="eyebrow mt-8 inline-flex items-center justify-center rounded-full bg-gold-500 px-8 py-4 text-center text-[0.7rem] leading-snug text-sand-50 transition-colors hover:bg-gold-400">Quiero promover Riviera</a>
                 </div>
                 <div class="relative min-h-[260px] lg:min-h-full">
                     <img src="{{ asset('images/riviera-comunidad-alberca.jpg') }}" alt="Riviera Residencial dentro de Real del Mar" loading="lazy"

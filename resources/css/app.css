@@ -194,6 +194,29 @@ body {
     letter-spacing: var(--tracking-eyebrow);
 }
 
+/* Nav link — premium sweep underline.
+   The line grows in from the left on hover and retracts to the right on
+   leave (the transform-origin swap), in the link's current text color. */
+.nav-link {
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.55rem;
+    height: 1.5px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+}
+
 /* Display headline base — BoardWalk (matches cande.mx headings) */
 .display {
     @apply font-display;

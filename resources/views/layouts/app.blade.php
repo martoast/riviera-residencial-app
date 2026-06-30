@@ -10,18 +10,35 @@
         setTimeout(function () { document.documentElement.classList.remove('is-loading'); }, 14000);
     </script>
 
-    @php $siteUrl = rtrim(config('app.url'), '/'); @endphp
-    <title>{{ $title ?? 'Riviera Residencial · Real del Mar — Casas con vista al mar y golf en Tijuana–Rosarito' }}</title>
-    <meta name="description" content="{{ $description ?? 'Riviera Residencial Etapa II: 46 casas dentro de Real del Mar, modelos Murano y Mazzorbo, con casa club, alberca, golf y vistas al mar. Un desarrollo de HIR Baja, comercializado por BCapital Brokers.' }}">
+    @php
+        $siteUrl = rtrim(config('app.url'), '/');
+        $metaTitle = $title ?? 'Riviera Residencial · Real del Mar — Casas con vista al mar y golf en Tijuana–Rosarito';
+        $metaDesc = $description ?? 'Riviera Residencial Etapa II: 46 casas dentro de Real del Mar, modelos Murano y Mazzorbo, con casa club, alberca, golf y vistas al mar. Un desarrollo de HIR Baja, comercializado por BCapital Brokers.';
+        $ogImage = $siteUrl . '/images/og-riviera.jpg';
+    @endphp
+    <title>{{ $metaTitle }}</title>
+    <meta name="description" content="{{ $metaDesc }}">
+    <meta name="keywords" content="Riviera Residencial, Real del Mar, casas Tijuana, casas Rosarito, Murano, Mazzorbo, HIR Baja, BCapital Brokers, casas frente al mar, casas con golf, preventa Baja California">
+    <meta name="author" content="HIR Baja · BCapital Brokers">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0a1a26">
     <link rel="canonical" href="{{ $siteUrl }}/">
 
+    {{-- Icons --}}
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/icon-512.png" sizes="512x512">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
     {{-- Open Graph (WhatsApp, Facebook, iMessage, LinkedIn) — URLs must be absolute --}}
-    <meta property="og:site_name" content="Riviera Residencial · Real del Mar">
+    <meta property="og:site_name" content="Riviera Residencial">
     <meta property="og:title" content="Riviera Residencial · Cielo · Mar · Golf">
-    <meta property="og:description" content="46 casas dentro de Real del Mar, modelos Murano y Mazzorbo, casa club, alberca y vistas al mar. Un desarrollo de HIR Baja.">
-    <meta property="og:image" content="{{ $siteUrl }}/images/riviera-hero.jpg">
+    <meta property="og:description" content="46 casas dentro de Real del Mar, modelos Murano y Mazzorbo, con casa club, alberca, golf y vistas al mar. Un desarrollo de HIR Baja.">
+    <meta property="og:image" content="{{ $ogImage }}">
+    <meta property="og:image:secure_url" content="{{ $ogImage }}">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Riviera Residencial — casas con vista al mar y golf en Real del Mar">
     <meta property="og:url" content="{{ $siteUrl }}/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_MX">
@@ -30,7 +47,32 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Riviera Residencial · Cielo · Mar · Golf">
     <meta name="twitter:description" content="46 casas dentro de Real del Mar, modelos Murano y Mazzorbo, casa club, alberca y vistas al mar.">
-    <meta name="twitter:image" content="{{ $siteUrl }}/images/riviera-hero.jpg">
+    <meta name="twitter:image" content="{{ $ogImage }}">
+    <meta name="twitter:image:alt" content="Riviera Residencial — Real del Mar">
+
+    {{-- Structured data — Residential real-estate development --}}
+    <script type="application/ld+json">
+    {!! json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'ResidentialComplex',
+        'name' => 'Riviera Residencial Etapa II',
+        'description' => $metaDesc,
+        'url' => $siteUrl . '/',
+        'image' => $ogImage,
+        'slogan' => 'Cielo · Mar · Golf',
+        'numberOfAccommodationUnits' => 46,
+        'address' => [
+            '@type' => 'PostalAddress',
+            'streetAddress' => 'Km. 19.5, Escénica Tijuana–Rosarito, Real del Mar',
+            'addressLocality' => 'Tijuana',
+            'addressRegion' => 'Baja California',
+            'postalCode' => '22565',
+            'addressCountry' => 'MX',
+        ],
+        'developer' => ['@type' => 'Organization', 'name' => 'HIR Baja · Grupo HIR'],
+        'broker' => ['@type' => 'RealEstateAgent', 'name' => 'BCapital Brokers', 'telephone' => '+52 664 570 9874'],
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -53,11 +95,8 @@
 
     @php
         $navLinks = [
-            ['label' => 'Inicio',     'href' => '#inicio'],
-            ['label' => 'Proyecto',   'href' => '#proyecto'],
             ['label' => 'Modelos',    'href' => '#modelos'],
-            ['label' => 'Casa Club',  'href' => '#casa-club'],
-            ['label' => 'Amenidades', 'href' => '#amenidades'],
+            ['label' => 'Amenidades', 'href' => '#zona'],
             ['label' => 'Ubicación',  'href' => '#ubicacion'],
             ['label' => 'Contacto',   'href' => '#contacto'],
         ];
@@ -68,7 +107,7 @@
         class="fixed inset-x-0 top-0 z-50 transition-all duration-500"
         :class="navSolid || navOpen ? 'bg-sand-50/95 backdrop-blur-sm shadow-[0_1px_0_0_rgba(35,32,25,0.08)]' : 'bg-transparent'"
     >
-        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
+        <nav class="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
             {{-- Logo --}}
             <a
                 href="#inicio"
@@ -79,25 +118,26 @@
                 @include('partials.logo', ['class' => 'h-11 w-auto lg:h-12'])
             </a>
 
-            {{-- Desktop links --}}
-            <div class="hidden items-center gap-7 xl:flex">
+            {{-- Desktop links — centered in the navbar --}}
+            <div class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 lg:flex">
                 @foreach ($navLinks as $item)
                     <a
                         href="{{ $item['href'] }}"
-                        class="eyebrow text-[0.65rem] transition-colors duration-300"
+                        class="nav-link eyebrow text-[0.65rem] transition-colors duration-300"
                         :class="navSolid ? 'text-ink-soft hover:text-gold-500' : 'text-sand-100 hover:text-white'"
                     >{{ $item['label'] }}</a>
                 @endforeach
-
-                <a
-                    href="#contacto"
-                    class="eyebrow rounded-full px-5 py-2.5 text-[0.65rem] text-sand-50 transition-all duration-300 bg-gold-500 hover:bg-gold-400"
-                >Solicitar disponibilidad</a>
             </div>
+
+            {{-- CTA (right) --}}
+            <a
+                href="#contacto"
+                class="eyebrow z-50 hidden rounded-full px-5 py-2.5 text-[0.65rem] text-sand-50 transition-all duration-300 bg-gold-500 hover:bg-gold-400 lg:inline-flex"
+            >Solicitar disponibilidad</a>
 
             {{-- Mobile hamburger --}}
             <button
-                class="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 xl:hidden"
+                class="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
                 @click="navOpen = !navOpen"
                 aria-label="Menú"
             >
@@ -112,7 +152,7 @@
         <div
             x-show="navOpen"
             x-collapse.duration.400ms
-            class="xl:hidden"
+            class="lg:hidden"
         >
             <div class="space-y-1 border-t border-ink/5 bg-sand-50 px-6 pb-8 pt-4">
                 @foreach ($navLinks as $item)
@@ -156,7 +196,7 @@
                         <li><a href="#modelos" class="transition-colors hover:text-gold-300">Modelos Murano y Mazzorbo</a></li>
                         <li><a href="#precios" class="transition-colors hover:text-gold-300">Precios de preventa</a></li>
                         <li><a href="#casa-club" class="transition-colors hover:text-gold-300">Casa Club</a></li>
-                        <li><a href="#amenidades" class="transition-colors hover:text-gold-300">Amenidades</a></li>
+                        <li><a href="#zona" class="transition-colors hover:text-gold-300">Amenidades</a></li>
                         <li><a href="#ubicacion" class="transition-colors hover:text-gold-300">Ubicación</a></li>
                     </ul>
                 </div>
@@ -201,14 +241,14 @@
         $waText = rawurlencode('Hola, me interesa Riviera Residencial. ¿Me pueden enviar disponibilidad e información?');
     @endphp
     <div class="fixed bottom-6 right-6 z-40 flex flex-col items-center gap-3">
-        {{-- Maps --}}
+        {{-- Maps (hidden on mobile to keep the hero clean) --}}
         <a href="{{ $mapsUrl }}" target="_blank" rel="noopener" aria-label="Ver ubicación en Google Maps"
-            class="flex h-12 w-12 items-center justify-center rounded-full bg-ocean-900 text-sand-50 shadow-lg shadow-ink/20 transition-transform duration-300 hover:scale-110">
+            class="hidden h-12 w-12 items-center justify-center rounded-full bg-ocean-900 text-sand-50 shadow-lg shadow-ink/20 transition-transform duration-300 hover:scale-110 sm:flex">
             <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
         </a>
-        {{-- Call --}}
+        {{-- Call (hidden on mobile) --}}
         <a href="tel:{{ $telNumber }}" aria-label="Llamar"
-            class="flex h-12 w-12 items-center justify-center rounded-full bg-gold-500 text-sand-50 shadow-lg shadow-ink/20 transition-transform duration-300 hover:scale-110">
+            class="hidden h-12 w-12 items-center justify-center rounded-full bg-gold-500 text-sand-50 shadow-lg shadow-ink/20 transition-transform duration-300 hover:scale-110 sm:flex">
             <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current"><path d="M6.62 10.79a15.53 15.53 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
         </a>
         {{-- WhatsApp --}}

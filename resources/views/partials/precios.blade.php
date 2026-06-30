@@ -8,13 +8,13 @@
 
         <div class="mt-14 grid gap-8 md:grid-cols-2">
             @foreach ([
-                ['n' => 'Murano', 'p' => '$6.7 – $7.2', 'u' => 'MDP'],
-                ['n' => 'Mazzorbo', 'p' => '$6.2 – $6.4', 'u' => 'MDP'],
+                ['n' => 'Murano', 'a' => 6.7, 'b' => 7.2, 'u' => 'MDP'],
+                ['n' => 'Mazzorbo', 'a' => 6.2, 'b' => 6.4, 'u' => 'MDP'],
             ] as $card)
                 <div class="reveal rounded-3xl border border-sand-50/15 bg-sand-50/[0.04] p-10 text-center backdrop-blur-sm">
                     <p class="eyebrow text-[0.6rem] text-gold-300">Modelo {{ $card['n'] }}</p>
                     <p class="mt-5 text-sm text-sand-200/60">Desde</p>
-                    <p class="display mt-1 text-5xl font-light lg:text-6xl">{{ $card['p'] }}</p>
+                    <p class="display mt-1 text-5xl font-light tabular-nums lg:text-6xl">$<span x-data="countUp({{ $card['a'] }})" x-text="display">{{ number_format($card['a'], 1) }}</span> <span class="text-gold-300">–</span> $<span x-data="countUp({{ $card['b'] }})" x-text="display">{{ number_format($card['b'], 1) }}</span></p>
                     <p class="eyebrow mt-2 text-[0.6rem] text-sand-200/60">{{ $card['u'] }}</p>
                 </div>
             @endforeach

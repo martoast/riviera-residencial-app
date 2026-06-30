@@ -3,7 +3,8 @@
     <div class="absolute inset-0">
         <img src="{{ asset('images/riviera-alberca.jpg') }}" alt="Casa Club con alberca en Riviera Residencial" loading="lazy"
             class="h-full w-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-ocean-950/85 via-transparent to-ocean-950/20"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-ocean-950/95 via-ocean-950/55 to-ocean-950/25"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-ocean-950/75 via-ocean-950/20 to-transparent"></div>
     </div>
     <div class="relative mx-auto w-full max-w-7xl px-6 pb-20 lg:px-10">
         <div class="reveal-group max-w-xl">
@@ -12,7 +13,7 @@
             <p class="mt-6 text-lg leading-relaxed text-sand-100/90 drop-shadow-[0_2px_18px_rgba(10,26,38,0.55)]">
                 Un espacio diseñado para disfrutar, descansar y compartir dentro de Riviera Residencial. La Casa Club con alberca se convierte en un punto de encuentro para residentes, familias e invitados.
             </p>
-            <a href="#amenidades" class="eyebrow mt-8 inline-flex items-center justify-center rounded-full bg-gold-500 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-gold-400">Ver amenidades</a>
+            <a href="#zona" class="eyebrow mt-8 inline-flex items-center justify-center rounded-full bg-gold-500 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-gold-400">Ver amenidades</a>
         </div>
     </div>
 </section>

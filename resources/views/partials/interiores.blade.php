@@ -9,10 +9,14 @@
         ['img' => 'riviera-terraza.jpg',      't' => 'Roof garden', 'span' => 'lg:col-span-2'],
         ['img' => 'riviera-int-sala.jpg',     't' => 'Estancia con vista', 'span' => ''],
     ];
+    $lb = collect($interiores)->map(fn ($e) => ['src' => asset('images/' . $e['img']), 't' => $e['t']])->values();
 @endphp
 
 <section id="interiores" class="bg-sand-100 py-24 lg:py-32"
-    x-data="{ open: false, src: '', title: '' }" @keydown.escape.window="open = false">
+    x-data="gallery(@js($lb))"
+    @keydown.escape.window="open = false"
+    @keydown.arrow-right.window="open && next()"
+    @keydown.arrow-left.window="open && prev()">
     <div class="mx-auto max-w-7xl px-6 lg:px-10">
         <div class="reveal-group max-w-2xl">
             <p class="eyebrow text-gold-500">Casas muestra</p>
@@ -23,7 +27,7 @@
 
         <div class="reveal mt-12 grid auto-rows-[220px] grid-cols-2 gap-4 lg:grid-cols-4">
             @foreach ($interiores as $i)
-                <button type="button" @click="open = true; src = '{{ asset('images/' . $i['img']) }}'; title = '{{ $i['t'] }}'"
+                <button type="button" @click="show({{ $loop->index }})"
                     class="group relative overflow-hidden rounded-2xl bg-ocean-950 {{ $i['span'] }}">
                     <img src="{{ asset('images/' . $i['img']) }}" alt="{{ $i['t'] }} — casa muestra Riviera Residencial" loading="lazy"
                         class="h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105">
@@ -38,15 +42,5 @@
         </div>
     </div>
 
-    {{-- Lightbox --}}
-    <div x-show="open" x-cloak x-transition.opacity
-        class="fixed inset-0 z-[90] flex items-center justify-center bg-ocean-950/90 p-4 lg:p-10" @click="open = false">
-        <div class="relative max-h-full max-w-5xl" @click.stop>
-            <button @click="open = false" aria-label="Cerrar"
-                class="absolute -top-4 -right-4 flex h-10 w-10 items-center justify-center rounded-full bg-sand-50 text-ink shadow-lg">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
-            </button>
-            <img :src="src" :alt="title" class="max-h-[85vh] w-auto rounded-xl object-contain shadow-2xl">
-        </div>
-    </div>
+    @include('partials.lightbox')
 </section>
