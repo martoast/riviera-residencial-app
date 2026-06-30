@@ -24,7 +24,7 @@
         <h1 class="display mt-2 text-5xl font-light leading-[1.04] text-sand-50 drop-shadow-[0_2px_28px_rgba(10,26,38,0.7)] sm:text-6xl lg:text-7xl">
             Riviera Residencial
         </h1>
-        <p class="mx-auto mt-5 max-w-md text-sm leading-relaxed text-sand-100/90 drop-shadow-[0_2px_16px_rgba(10,26,38,0.7)] sm:text-base">
+        <p class="mx-auto mt-5 max-w-md text-sm leading-relaxed text-sand-100/90 drop-shadow-[0_2px_16px_rgba(10,26,38,0.7)] sm:max-w-xl sm:text-base">
             Residencias contemporáneas dentro de una comunidad privada rodeada de naturaleza, golf y vistas al mar.
         </p>
     </div>
