@@ -3,6 +3,7 @@
 @section('content')
     @include('partials.hero')
     @include('partials.proyecto')
+    @include('partials.video')
     @include('partials.casa-club')
     @include('partials.modelos')
     @include('partials.aspiracional')
