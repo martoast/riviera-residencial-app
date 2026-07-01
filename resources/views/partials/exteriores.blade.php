@@ -2,14 +2,13 @@
 @php
     $exteriores = [
         ['img' => 'riviera-murano.jpg',            't' => 'Fachada Murano', 'span' => 'lg:col-span-2 lg:row-span-2'],
-        ['img' => 'riviera-murano-vertical.jpg',   't' => 'Fachada Murano', 'span' => 'row-span-2'],
         ['img' => 'riviera-mazzorbo.jpg',          't' => 'Fachada Mazzorbo', 'span' => ''],
         ['img' => 'riviera-acceso.jpg',            't' => 'Acceso', 'span' => ''],
         ['img' => 'riviera-jardin.jpg',            't' => 'Jardín', 'span' => ''],
         ['img' => 'riviera-terraza.jpg',           't' => 'Terraza · Roof garden', 'span' => ''],
         ['img' => 'riviera-casaclub-pergola.jpg',  't' => 'Casa Club', 'span' => ''],
         ['img' => 'riviera-comunidad-alberca.jpg', 't' => 'Alberca', 'span' => ''],
-        ['img' => 'riviera-alberca-mar.jpg',       't' => 'Vista al mar', 'span' => 'col-span-2 lg:col-span-4'],
+        ['img' => 'riviera-alberca-mar.jpg',       't' => 'Vista al mar', 'span' => 'lg:col-span-2'],
     ];
     $lb = collect($exteriores)->map(fn ($e) => ['src' => asset('images/' . $e['img']), 't' => $e['t']])->values();
 @endphp
