@@ -22,6 +22,10 @@
 
         {{-- Financiamiento disponible (MX / USA) --}}
         <div class="reveal mx-auto mt-12 flex max-w-md flex-col items-center rounded-2xl border border-gold-300/25 bg-sand-50/[0.04] px-8 py-7 text-center backdrop-blur-sm">
+            <span class="mb-5 inline-flex items-center gap-2 rounded-full bg-gold-500/15 px-4 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-gold-300">
+                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+                Entrega inmediata
+            </span>
             <span class="flex h-12 w-12 items-center justify-center rounded-full border border-gold-300/40 text-gold-300">
                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
                     <circle cx="15.5" cy="7" r="3.6"/>
