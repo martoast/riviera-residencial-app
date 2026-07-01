@@ -9,9 +9,37 @@
 @source '../**/*.js';
 
 /* ------------------------------------------------------------------
-   Brand fonts (self-hosted, matching cande.mx)
-   Headings → BoardWalk · Body → Titling Gothic Normal · Accent → Delight
+   Brand fonts (self-hosted)
+   Headings → Baskerville · Body → Titling Gothic Normal · Accent → Delight
 ------------------------------------------------------------------- */
+@font-face {
+    font-family: 'Baskerville';
+    src: url('/fonts/Baskerville-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Baskerville';
+    src: url('/fonts/Baskerville-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Baskerville';
+    src: url('/fonts/Baskerville-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Baskerville';
+    src: url('/fonts/Baskerville-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 @font-face {
     font-family: 'BoardWalk';
     src: url('/fonts/BoardwalkAve-Regular.otf') format('opentype');
@@ -77,7 +105,7 @@
    cancelería negra (matte black), and the Pacific itself.
 ------------------------------------------------------------------- */
 @theme {
-    --font-display: 'BoardWalk', ui-serif, Georgia, serif;
+    --font-display: 'Baskerville', ui-serif, Georgia, serif;
     --font-sans: 'Titling Gothic Normal', ui-sans-serif, system-ui, sans-serif;
     --font-delight: 'Delight', ui-sans-serif, system-ui, sans-serif;
 
@@ -217,19 +245,19 @@ body {
     transform-origin: left center;
 }
 
-/* Display headline base — BoardWalk (matches cande.mx headings) */
+/* Display headline base — Baskerville (uniform across all headlines) */
 .display {
     @apply font-display;
-    line-height: 1.08;
+    line-height: 1.12;
 }
 
-/* Accent words inside headlines — render in Delight for a refined contrast
-   against BoardWalk (BoardWalk has no true italic, so no fake-oblique). */
+/* Accent words inside headlines — same Baskerville, no special styling
+   (client wants a single uniform headline face). */
 .display em,
 .accent-italic {
-    font-family: var(--font-delight);
+    font-family: var(--font-display);
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 /* Scroll-reveal initial states (driven by reveal.js) */
