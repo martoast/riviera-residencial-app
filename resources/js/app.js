@@ -122,5 +122,54 @@ Alpine.data('countUp', (target, decimals = 1, duration = 1500) => ({
     },
 }));
 
+/**
+ * Amenities slider + bento modal. Pass the amenity list:
+ * amenities([{ t, sub, desc, tags, cover, gallery: [...] }, ...]).
+ * Cards nudge the track; clicking one opens a bento gallery modal, and
+ * clicking a bento tile opens a fullscreen image viewer with arrows.
+ */
+Alpine.data('amenities', (items = []) => ({
+    items,
+    open: false,
+    active: null,
+    viewer: false,
+    vi: 0,
+    show(idx) {
+        this.active = this.items[idx];
+        this.open = true;
+        document.documentElement.classList.add('overflow-hidden');
+    },
+    close() {
+        this.open = false;
+        this.viewer = false;
+        document.documentElement.classList.remove('overflow-hidden');
+    },
+    nudge(dir) {
+        const t = this.$refs.track;
+        const c = t.querySelector('[data-card]');
+        const amt = c ? c.offsetWidth + 24 : 360;
+        t.scrollBy({ left: dir * amt, behavior: 'smooth' });
+    },
+    // Bento tile span pattern (desktop 4-col): a big lead tile, then rhythm.
+    span(i) {
+        const p = i % 6;
+        if (p === 0) return 'sm:col-span-2 sm:row-span-2';
+        if (p === 3) return 'sm:col-span-2';
+        return '';
+    },
+    lightbox(i) {
+        this.vi = i;
+        this.viewer = true;
+    },
+    viewNext() {
+        const n = this.active?.gallery.length || 1;
+        this.vi = (this.vi + 1) % n;
+    },
+    viewPrev() {
+        const n = this.active?.gallery.length || 1;
+        this.vi = (this.vi - 1 + n) % n;
+    },
+}));
+
 window.Alpine = Alpine;
 Alpine.start();
