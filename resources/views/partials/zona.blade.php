@@ -166,7 +166,13 @@
             class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-sand-50/10 p-3 text-sand-50 backdrop-blur-sm transition-colors hover:bg-sand-50/25 sm:left-6">
             <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
         </button>
-        <img :src="(active?.gallery || [])[vi]" :alt="active?.t" class="max-h-[85svh] max-w-full rounded-xl object-contain">
+        <div class="relative flex max-h-[88svh] max-w-full flex-col items-center gap-4">
+            <img :src="(active?.gallery || [])[vi]" :alt="active?.t" class="max-h-[80svh] max-w-full rounded-xl object-contain">
+            {{-- counter --}}
+            <span class="rounded-full bg-sand-50/10 px-4 py-1.5 text-[0.7rem] font-medium tracking-wider text-sand-50 backdrop-blur-sm">
+                <span x-text="vi + 1"></span> / <span x-text="(active?.gallery || []).length"></span>
+            </span>
+        </div>
         <button type="button" @click="viewNext()" aria-label="Siguiente"
             class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-sand-50/10 p-3 text-sand-50 backdrop-blur-sm transition-colors hover:bg-sand-50/25 sm:right-6">
             <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
