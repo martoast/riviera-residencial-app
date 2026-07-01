@@ -38,29 +38,13 @@
             <div class="mt-5 flex items-center gap-5">
                 {{-- México --}}
                 <span class="flex items-center gap-2 text-[0.7rem] font-medium text-sand-100/85">
-                    <svg class="h-5 w-auto rounded-[3px] ring-1 ring-sand-50/15" viewBox="0 0 30 20">
-                        <rect width="10" height="20" x="0" fill="#006847"/>
-                        <rect width="10" height="20" x="10" fill="#ffffff"/>
-                        <rect width="10" height="20" x="20" fill="#CE1126"/>
-                        <circle cx="15" cy="10" r="2.1" fill="none" stroke="#9b7b3a" stroke-width="0.8"/>
-                    </svg>
+                    <img src="{{ asset('images/flag-mx.svg') }}" alt="Bandera de México" class="h-5 w-auto rounded-[3px] ring-1 ring-sand-50/15">
                     México
                 </span>
                 <span class="h-6 w-px bg-sand-50/20"></span>
                 {{-- Estados Unidos --}}
                 <span class="flex items-center gap-2 text-[0.7rem] font-medium text-sand-100/85">
-                    <svg class="h-5 w-auto rounded-[3px] ring-1 ring-sand-50/15" viewBox="0 0 30 20">
-                        <rect width="30" height="20" fill="#ffffff"/>
-                        @foreach ([0,2,4,6,8,10,12] as $s)
-                            <rect width="30" height="1.539" y="{{ $s * 1.539 }}" fill="#B22234"/>
-                        @endforeach
-                        <rect width="12" height="10.77" fill="#3C3B6E"/>
-                        @foreach ([2,5,8] as $cx)
-                            @foreach ([2,5,8] as $cy)
-                                <circle cx="{{ $cx }}" cy="{{ $cy }}" r="0.6" fill="#ffffff"/>
-                            @endforeach
-                        @endforeach
-                    </svg>
+                    <img src="{{ asset('images/flag-us.svg') }}" alt="Bandera de Estados Unidos" class="h-5 w-auto rounded-[3px] ring-1 ring-sand-50/15">
                     Estados Unidos
                 </span>
             </div>
