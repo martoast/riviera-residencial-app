@@ -27,10 +27,10 @@
                 Entrega inmediata
             </span>
             <span class="flex h-12 w-12 items-center justify-center rounded-full border border-gold-300/40 text-gold-300">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                    <circle cx="15.5" cy="7" r="3.6"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.5 5.4v3.2M14.4 6.1c0-.5.5-.8 1.1-.8s1.1.3 1.1.8-.5.7-1.1.8-1.1.3-1.1.8.5.8 1.1.8 1.1-.3 1.1-.8"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.5 15.5c1.4-.9 2.9-.9 4.3 0l1.8 1.1c.5.3 1 .4 1.6.3l5.2-1c1-.2 1.7-1.1 1.4-2.1-.2-.7-.8-1.1-1.5-1.1h-4.4"/>
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/>
+                    <path d="M12 18V6"/>
                 </svg>
             </span>
             <p class="eyebrow mt-4 text-[0.7rem] text-sand-50">Financiamiento disponible</p>
