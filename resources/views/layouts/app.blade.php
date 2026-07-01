@@ -113,9 +113,16 @@
                 href="#inicio"
                 class="group relative z-50 flex items-center gap-3 transition-colors duration-500"
                 :class="navSolid || navOpen ? 'text-ink' : 'text-sand-50'"
-                aria-label="Riviera Residencial — inicio"
+                aria-label="BCapital Brokers — inicio"
             >
-                @include('partials.logo', ['variant' => 'auto', 'class' => 'h-12 w-auto lg:h-14'])
+                <span class="relative inline-block" role="img" aria-label="BCapital Brokers">
+                    <img src="{{ asset('images/bcapital-white.png') }}" alt="" aria-hidden="true"
+                        class="h-10 w-auto lg:h-12 transition-opacity duration-500"
+                        :class="navSolid || navOpen ? 'opacity-0' : 'opacity-100'">
+                    <img src="{{ asset('images/bcapital-dark.png') }}" alt="" aria-hidden="true"
+                        class="absolute left-0 top-0 h-10 w-auto lg:h-12 transition-opacity duration-500"
+                        :class="navSolid || navOpen ? 'opacity-100' : 'opacity-0'">
+                </span>
             </a>
 
             {{-- Desktop links — centered in the navbar --}}

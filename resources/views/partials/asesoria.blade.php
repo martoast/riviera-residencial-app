@@ -39,10 +39,8 @@
                 <div x-show="step === 2" x-cloak class="space-y-3">
                     <p class="eyebrow mb-2 text-[0.6rem] text-ink-soft">¿Qué te interesa?</p>
                     @foreach ([
-                        'Quiero conocer Modelo Murano',
-                        'Quiero conocer Modelo Mazzorbo',
-                        'Quiero recibir disponibilidad',
-                        'Quiero visitar casa muestra',
+                        'Quiero información de crédito directo',
+                        'Quiero agendar una visita',
                         'Soy broker',
                     ] as $op)
                         <label class="flex cursor-pointer items-center gap-3 rounded-xl border border-ink/10 bg-sand-50 px-4 py-3 text-sm text-ink transition-colors hover:border-gold-400 has-[:checked]:border-gold-500 has-[:checked]:bg-gold-300/15">
