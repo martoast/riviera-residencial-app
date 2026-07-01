@@ -15,35 +15,5 @@
             <span class="hidden h-14 w-px bg-ink/15 sm:block"></span>
             <img src="{{ asset('images/bcapital-dark.png') }}" alt="BCapital Brokers" class="h-12 w-auto sm:h-14">
         </div>
-
-        @php
-            $eras = [
-                ['d' => "1960's", 't' => 'Inicio en comercialización de lotes'],
-                ['d' => "1990's", 't' => 'HIR Casa · Hipotecaria Nacional · HIR Seguros'],
-                ['d' => "2000's", 't' => 'HIR PYME · HIR Expo · Residencial WTC'],
-                ['d' => "2010's", 't' => 'Pepsi Center · BIM Banco Inmobiliario'],
-                ['d' => "2020's", 't' => 'HIR XLab · Preflex · HIR CASA-BMV'],
-            ];
-        @endphp
-
-        {{-- Timeline — compact list on mobile --}}
-        <div class="reveal mt-10 space-y-4 text-left sm:hidden">
-            @foreach ($eras as $era)
-                <div class="border-l-2 border-gold-500/40 pl-4">
-                    <p class="display text-lg leading-none text-gold-500">{{ $era['d'] }}</p>
-                    <p class="mt-1.5 text-sm leading-snug text-ink-soft">{{ $era['t'] }}</p>
-                </div>
-            @endforeach
-        </div>
-
-        {{-- Timeline — card grid on tablet/desktop --}}
-        <div class="reveal mt-16 hidden gap-px overflow-hidden rounded-3xl bg-ink/10 text-left sm:grid sm:grid-cols-2 lg:grid-cols-5">
-            @foreach ($eras as $era)
-                <div class="bg-sand-50 p-6">
-                    <p class="display text-2xl text-gold-500">{{ $era['d'] }}</p>
-                    <p class="mt-2 text-sm leading-relaxed text-ink-soft">{{ $era['t'] }}</p>
-                </div>
-            @endforeach
-        </div>
     </div>
 </section>
