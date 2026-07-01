@@ -85,7 +85,7 @@
     {{-- ============================== PRELOADER ============================== --}}
     <div id="preloader" class="fixed inset-0 z-[100] flex items-center justify-center bg-ocean-950">
         <div class="preloader-mark flex flex-col items-center text-sand-50">
-            @include('partials.logo', ['class' => 'h-14 w-auto'])
+            <img src="{{ asset('images/bcapital-white.png') }}" alt="BCapital Brokers" class="h-16 w-auto">
             <div class="mt-10 h-px w-44 overflow-hidden rounded-full bg-sand-50/15">
                 <div id="preloader-bar" class="h-full w-0 rounded-full bg-gold-400 transition-[width] duration-300 ease-out"></div>
             </div>
@@ -186,8 +186,8 @@
                         Un desarrollo más de HIR Baja · Grupo HIR.
                     </p>
                     <div class="mt-6">
-                        <p class="eyebrow mb-3 text-[0.55rem] text-sand-200/45">Comercializado por</p>
-                        <img src="{{ asset('images/bcapital-logo.png') }}" alt="BCapital Brokers" class="h-12 w-auto">
+                        <p class="eyebrow mb-3 text-[0.6rem] text-sand-50">Comercializado por</p>
+                        <img src="{{ asset('images/bcapital-white.png') }}" alt="BCapital Brokers" class="h-16 w-auto">
                     </div>
                 </div>
 

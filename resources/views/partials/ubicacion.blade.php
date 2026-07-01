@@ -6,7 +6,7 @@
             <div class="reveal-group">
                 <p class="eyebrow text-gold-300">Ubicación</p>
                 <h2 class="display mt-5 text-4xl font-light sm:text-5xl">Conexión con lo <span class="accent-italic">esencial</span></h2>
-                <p class="mt-4 text-lg text-gold-300">A solo 15 minutos de Tijuana y 10 minutos de Rosarito.</p>
+                <p class="mt-4 text-lg text-gold-300">A solo 15 minutos de la garita de San Diego y 10 minutos de Rosarito.</p>
                 <p class="mt-6 text-lg leading-relaxed text-sand-100/80">
                     Riviera Residencial se encuentra dentro de Real del Mar, sobre la Escénica Tijuana–Rosarito, en una ubicación estratégica para quienes buscan vivir cerca de la costa, con conexión rápida hacia Tijuana, Playas y Rosarito.
                 </p>
@@ -15,7 +15,7 @@
                     @foreach ([
                         'Dentro de Real del Mar',
                         'Km. 19.5, Escénica Tijuana–Rosarito',
-                        'A 15 min de Tijuana',
+                        'A 15 min de la garita de San Diego',
                         'A 10 min de Rosarito',
                         'Conexión con Playas de Tijuana',
                         'Adiós al tráfico',

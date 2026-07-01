@@ -3,8 +3,7 @@
     <div class="absolute inset-0">
         <img src="{{ asset('images/riviera-alberca.jpg') }}" alt="Casa Club con alberca en Riviera Residencial" loading="lazy"
             class="h-full w-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-ocean-950/95 via-ocean-950/55 to-ocean-950/25"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-ocean-950/75 via-ocean-950/20 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/70 to-transparent"></div>
     </div>
     <div class="relative mx-auto w-full max-w-7xl px-6 pb-20 lg:px-10">
         <div class="reveal-group max-w-xl">

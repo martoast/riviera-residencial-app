@@ -8,6 +8,7 @@
         ['img' => 'riviera-int-recamara2.jpg','t' => 'Recámara principal', 'span' => ''],
         ['img' => 'riviera-terraza.jpg',      't' => 'Roof garden', 'span' => 'lg:col-span-2'],
         ['img' => 'riviera-int-sala.jpg',     't' => 'Estancia con vista', 'span' => ''],
+        ['img' => 'riviera-jardin.jpg',       't' => 'Patio', 'span' => ''],
     ];
     $lb = collect($interiores)->map(fn ($e) => ['src' => asset('images/' . $e['img']), 't' => $e['t']])->values();
 @endphp
