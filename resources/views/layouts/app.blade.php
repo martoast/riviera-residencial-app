@@ -228,24 +228,24 @@
                     </ul>
                 </div>
 
-                {{-- Footer lead form --}}
+                {{-- Contacto --}}
                 <div>
-                    <p class="eyebrow mb-5 text-[0.6rem] text-gold-300">Contacto rápido</p>
-                    <form name="contacto-footer" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/gracias.html" class="space-y-3">
-                        <input type="hidden" name="form-name" value="contacto-footer">
-                        <p class="hidden"><label>No llenar: <input name="bot-field"></label></p>
-                        <input type="text" name="nombre" placeholder="Nombre" required
-                            class="w-full rounded-lg border-0 bg-sand-50/10 px-4 py-2.5 text-sm text-sand-50 placeholder:text-sand-200/40 focus:bg-sand-50/15 focus:ring-1 focus:ring-gold-400">
-                        <input type="email" name="email" placeholder="Email" required
-                            class="w-full rounded-lg border-0 bg-sand-50/10 px-4 py-2.5 text-sm text-sand-50 placeholder:text-sand-200/40 focus:bg-sand-50/15 focus:ring-1 focus:ring-gold-400">
-                        <input type="tel" name="telefono" placeholder="Teléfono" required
-                            class="w-full rounded-lg border-0 bg-sand-50/10 px-4 py-2.5 text-sm text-sand-50 placeholder:text-sand-200/40 focus:bg-sand-50/15 focus:ring-1 focus:ring-gold-400">
-                        <input type="text" name="interes" placeholder="Interés (modelo, recorrido…)"
-                            class="w-full rounded-lg border-0 bg-sand-50/10 px-4 py-2.5 text-sm text-sand-50 placeholder:text-sand-200/40 focus:bg-sand-50/15 focus:ring-1 focus:ring-gold-400">
-                        <textarea name="mensaje" rows="2" placeholder="Mensaje"
-                            class="w-full rounded-lg border-0 bg-sand-50/10 px-4 py-2.5 text-sm text-sand-50 placeholder:text-sand-200/40 focus:bg-sand-50/15 focus:ring-1 focus:ring-gold-400"></textarea>
-                        <button type="submit" class="eyebrow w-full rounded-full bg-gold-500 px-6 py-3 text-[0.65rem] text-sand-50 transition-colors hover:bg-gold-400">Enviar</button>
-                    </form>
+                    <p class="eyebrow mb-5 text-[0.6rem] text-gold-300">Contacto</p>
+                    <ul class="space-y-3 text-sm">
+                        <li>
+                            <a href="https://wa.me/526645709874" target="_blank" rel="noopener" class="inline-flex items-center gap-2 transition-colors hover:text-gold-300">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+                                WhatsApp · 664 570 9874
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+526645709874" onclick="if(window.fbq)fbq('track','Contact',{method:'call'})" class="inline-flex items-center gap-2 transition-colors hover:text-gold-300">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current"><path d="M6.62 10.79a15.53 15.53 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+                                Llamar · 664 570 9874
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="eyebrow mt-7 inline-flex items-center justify-center rounded-full bg-gold-500 px-7 py-3.5 text-[0.65rem] text-sand-50 transition-colors hover:bg-gold-400">Agendar asesoría</a>
                 </div>
             </div>
 
