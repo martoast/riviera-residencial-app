@@ -267,15 +267,15 @@
         $mapsUrl = 'https://maps.google.com/?q=Real+del+Mar+Km+19.5+Escenica+Tijuana+Rosarito';
         $waText = rawurlencode('Hola, me interesa Riviera Residencial. ¿Me pueden enviar disponibilidad e información?');
     @endphp
-    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-center gap-3">
+    <div class="fixed right-4 top-1/2 z-40 flex -translate-y-1/2 flex-col items-center gap-3 sm:right-6">
         {{-- Maps (hidden on mobile to keep the hero clean) --}}
         <a href="{{ $mapsUrl }}" target="_blank" rel="noopener" aria-label="Ver ubicación en Google Maps"
-            class="hidden h-12 w-12 items-center justify-center rounded-full bg-ocean-900 text-sand-50 shadow-lg shadow-ink/20 transition-transform duration-300 hover:scale-110 sm:flex">
+            class="flex h-12 w-12 items-center justify-center rounded-full bg-ocean-900 text-sand-50 shadow-lg shadow-ink/20 transition-transform duration-300 hover:scale-110">
             <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
         </a>
         {{-- Call (hidden on mobile) --}}
         <a href="tel:{{ $telNumber }}" aria-label="Llamar" onclick="if(window.fbq)fbq('track','Contact',{method:'call'})"
-            class="hidden h-12 w-12 items-center justify-center rounded-full bg-gold-500 text-sand-50 shadow-lg shadow-ink/20 transition-transform duration-300 hover:scale-110 sm:flex">
+            class="flex h-12 w-12 items-center justify-center rounded-full bg-gold-500 text-sand-50 shadow-lg shadow-ink/20 transition-transform duration-300 hover:scale-110">
             <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current"><path d="M6.62 10.79a15.53 15.53 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
         </a>
         {{-- WhatsApp --}}
