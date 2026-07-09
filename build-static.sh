@@ -10,7 +10,7 @@ OUT="../dist"
 PORT=8099
 # Public URL of the deployed site — used for canonical/og:url/og:image,
 # which social scrapers require to be absolute. Override: SITE_URL=... ./build-static.sh
-SITE_URL="${SITE_URL:-https://riviera-residencial.netlify.app}"
+SITE_URL="${SITE_URL:-https://rivieraresidencial.netlify.app}"
 
 echo "▸ Building front-end assets…"
 npm run build >/dev/null
