@@ -7,6 +7,11 @@ project — the same stack as Bolt and Real del Mar).
 Each doc explains **what it is**, **how it works**, and **how to reuse it** (files to
 copy, dependencies, and the knobs you can tune).
 
+> Looking for the page-level blueprint instead of individual components? See
+> **[landing-page-structure.md](landing-page-structure.md)** — the section order,
+> layout archetypes, and porting checklist for replicating this landing page's
+> structure on other real-estate developments.
+
 ## Catalog
 
 | Codename | What it is | Files | Deps |
