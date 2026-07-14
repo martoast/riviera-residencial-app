@@ -46,13 +46,18 @@
     ];
 
     // Build the JS payload with resolved asset URLs (cover = first image).
+    // Append the file's mtime as a ?v= cache-buster so replacing an image (same
+    // filename) forces browsers/CDN to fetch the new bytes instead of stale cache.
+    $imgUrl = fn ($name) => asset('images/' . $name . '.jpg')
+        . '?v=' . (@filemtime(public_path('images/' . $name . '.jpg')) ?: '1');
+
     $amenitiesJs = collect($amenities)->map(fn ($a) => [
         't' => $a['t'],
         'sub' => $a['sub'],
         'desc' => $a['desc'],
         'tags' => $a['tags'],
-        'cover' => asset('images/' . $a['imgs'][0] . '.jpg'),
-        'gallery' => collect($a['imgs'])->map(fn ($i) => asset('images/' . $i . '.jpg'))->values(),
+        'cover' => $imgUrl($a['imgs'][0]),
+        'gallery' => collect($a['imgs'])->map(fn ($i) => $imgUrl($i))->values(),
     ])->values();
 @endphp
 
