@@ -102,7 +102,7 @@
     {{-- ============================== PRELOADER ============================== --}}
     <div id="preloader" class="fixed inset-0 z-[100] flex items-center justify-center bg-ocean-950">
         <div class="preloader-mark flex flex-col items-center text-sand-50">
-            <img src="{{ asset('images/bcapital-white.png') }}" alt="BCapital Brokers" class="h-16 w-auto">
+            <img src="{{ asset('images/riviera-logo.png') }}" alt="Riviera Residencial" class="h-20 w-auto">
             <div class="mt-10 h-px w-44 overflow-hidden rounded-full bg-sand-50/15">
                 <div id="preloader-bar" class="h-full w-0 rounded-full bg-gold-400 transition-[width] duration-300 ease-out"></div>
             </div>
@@ -130,13 +130,13 @@
                 href="#inicio"
                 class="group relative z-50 flex items-center gap-3 transition-colors duration-500"
                 :class="navSolid || navOpen ? 'text-ink' : 'text-sand-50'"
-                aria-label="BCapital Brokers — inicio"
+                aria-label="Riviera Residencial — inicio"
             >
-                <span class="relative inline-block" role="img" aria-label="BCapital Brokers">
-                    <img src="{{ asset('images/bcapital-white.png') }}" alt="" aria-hidden="true"
+                <span class="relative inline-block" role="img" aria-label="Riviera Residencial">
+                    <img src="{{ asset('images/riviera-logo.png') }}" alt="" aria-hidden="true"
                         class="h-10 w-auto lg:h-12 transition-opacity duration-500"
                         :class="navSolid || navOpen ? 'opacity-0' : 'opacity-100'">
-                    <img src="{{ asset('images/bcapital-dark.png') }}" alt="" aria-hidden="true"
+                    <img src="{{ asset('images/riviera-logo-dark.png') }}" alt="" aria-hidden="true"
                         class="absolute left-0 top-0 h-10 w-auto lg:h-12 transition-opacity duration-500"
                         :class="navSolid || navOpen ? 'opacity-100' : 'opacity-0'">
                 </span>
@@ -209,10 +209,6 @@
                     <p class="mt-5 text-xs leading-relaxed text-sand-200/55">
                         Un desarrollo más de HIR Baja · Grupo HIR.
                     </p>
-                    <div class="mt-6">
-                        <p class="eyebrow mb-3 text-[0.6rem] text-sand-50">Comercializado por</p>
-                        <img src="{{ asset('images/bcapital-white.png') }}" alt="BCapital Brokers" class="h-16 w-auto">
-                    </div>
                 </div>
 
                 {{-- Quick links --}}
@@ -250,7 +246,7 @@
             </div>
 
             <div class="mt-14 border-t border-sand-50/10 pt-8 text-xs leading-relaxed text-sand-200/50">
-                <p>© {{ date('Y') }} Riviera Residencial · Real del Mar. Todos los derechos reservados. · Aviso de Privacidad <span class="text-sand-200/30">· v1.0.3</span></p>
+                <p>© {{ date('Y') }} Riviera Residencial · Real del Mar. Todos los derechos reservados. · Aviso de Privacidad <span class="text-sand-200/30">· v1.0.4</span></p>
                 <p class="mt-2">
                     Las imágenes mostradas son representaciones ilustrativas del proyecto y pueden variar respecto al producto final.
                     La información de modelos, medidas, precios, acabados y disponibilidad está sujeta a cambios sin previo aviso.
