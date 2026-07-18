@@ -246,7 +246,7 @@
             </div>
 
             <div class="mt-14 border-t border-sand-50/10 pt-8 text-xs leading-relaxed text-sand-200/50">
-                <p>© {{ date('Y') }} Riviera Residencial · Real del Mar. Todos los derechos reservados. · Aviso de Privacidad <span class="text-sand-200/30">· v1.0.4</span></p>
+                <p>© {{ date('Y') }} Riviera Residencial · Real del Mar. Todos los derechos reservados. · Aviso de Privacidad <span class="text-sand-200/30">· v1.0.5</span></p>
                 <p class="mt-2">
                     Las imágenes mostradas son representaciones ilustrativas del proyecto y pueden variar respecto al producto final.
                     La información de modelos, medidas, precios, acabados y disponibilidad está sujeta a cambios sin previo aviso.
