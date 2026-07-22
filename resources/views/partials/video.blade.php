@@ -4,7 +4,7 @@
         <div class="reveal overflow-hidden rounded-3xl bg-ocean-950 shadow-xl shadow-ink/10 ring-1 ring-ink/5">
             <div class="aspect-video w-full">
                 <iframe class="h-full w-full"
-                    src="https://www.youtube-nocookie.com/embed/2RTL8rdvZIY?rel=0"
+                    src="https://www.youtube-nocookie.com/embed/cc1WQq1axxY?rel=0"
                     title="Riviera Residencial — comunidad privada dentro de Real del Mar"
                     loading="lazy" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
